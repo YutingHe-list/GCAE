@@ -1,0 +1,30 @@
+seed: 42
+
+paths:
+  seg_images: data/seg/images
+  seg_masks: data/seg/masks
+  det_images: data/det/images
+  det_labels: data/det/labels
+  virtual_out: outputs/virtual
+
+engine:
+  use_diffusers: false
+  num_virtual_per_mask: 2
+
+ssa:
+  segment_length_px: 40
+  severity: 0.5   # 0-1, 1 = severe radius reduction
+  max_trials: 5
+
+training:
+  img_size: 512
+  batch_size: 4
+  epochs: 50
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  num_workers: 4
+  seg_loss_weights: {bce: 0.5, dice: 0.5}
+  det_loss_weights: {obj: 1.0, box: 2.0}
+
+logging:
+  logdir: outputs/runs

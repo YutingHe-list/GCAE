@@ -1,0 +1,19 @@
+# Core
+torch>=2.2
+torchvision>=0.17
+numpy>=1.24
+opencv-python>=4.8
+scikit-image>=0.22
+PyYAML>=6.0
+
+# Optional: diffusion-based generators
+transformers>=4.41
+accelerate>=0.33
+safetensors>=0.4
+huggingface-hub>=0.23
+# diffusers is optional; code degrades gracefully if not installed
+# diffusers>=0.30
+
+# Logging and utilities
+tqdm>=4.66
+matplotlib>=3.8
